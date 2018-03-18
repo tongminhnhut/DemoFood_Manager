@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:textColorHint="@color/colorPrimary"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:id="@+id/edtName_AddMenu"
+            android:hint="Name"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:met_baseColor="@color/colorPrimary"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/colorPrimary"
+            app:met_singleLineEllipsis="true"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <info.hoang8f.widget.FButton
+                app:fButtonColor="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                android:text="Seclect"
+                android:id="@+id/btnSelect"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:shadowColor="@android:color/black"
+                app:shadowEnabled="true"
+                app:shadowHeight="5dp"
+                android:layout_margin="8dp"
+                app:cornerRadius="4dp"/>
+            <info.hoang8f.widget.FButton
+                app:fButtonColor="@color/colorPrimaryDark"
+                android:textColor="@android:color/white"
+                android:text="Upload"
+                android:id="@+id/btnUpload_AddMenu"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:shadowColor="@android:color/black"
+                app:shadowEnabled="true"
+                app:shadowHeight="5dp"
+                android:layout_margin="8dp"
+                app:cornerRadius="4dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_bg"
+    tools:context="com.tongminhnhut.orderfood_manager.DetailOrderActivity">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView_OrderDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardElevation="8dp">
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical|start"
+                    android:id="@+id/txtID_OrderDetail"
+                    android:text="#123456"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <TextView
+                    android:textStyle="italic"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical|start"
+                    android:id="@+id/txtPhone_OrderDetail"
+                    android:text="01654580403"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textStyle="italic"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical|start"
+                    android:id="@+id/txtTotal_OrderDetail"
+                    android:text="$1000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textStyle="italic"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical|start"
+                    android:id="@+id/txtComment_OrderDetail"
+                    android:text="Comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_below="@+id/cardView_OrderDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:text="Detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyler_OrderDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+    </LinearLayout>
+</RelativeLayout>
