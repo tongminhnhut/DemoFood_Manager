@@ -19,6 +19,12 @@ android {
 }
 
 dependencies {
+
+
+    //add Paper
+    implementation 'io.paperdb:paperdb:2.6'
+    implementation 'com.github.rey5137:material:1.2.4'
+
     // library Font
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
 

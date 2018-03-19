@@ -45,6 +45,37 @@
             app:met_primaryColor="@android:color/white"
             app:met_singleLineEllipsis="true"/>
 
+        <LinearLayout
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.rey.material.widget.CheckBox
+                android:id="@+id/cbRemember"
+                android:gravity="center_vertical"
+                style="@style/Material.Drawable.CheckBox"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Remember"
+                android:textColor="@android:color/white"
+                app:cbd_tickColor="@color/colorPrimaryDark"
+                app:cbd_strokeColor="@android:color/white"
+                />
+
+            <TextView
+                android:id="@+id/txtForgotPass"
+                android:textColor="@android:color/white"
+                android:text="@string/forgot"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 

@@ -17,10 +17,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
+import com.rey.material.widget.CheckBox;
 import com.tongminhnhut.orderfood_manager.Common.Common;
 import com.tongminhnhut.orderfood_manager.model.User;
 
 import dmax.dialog.SpotsDialog;
+import io.paperdb.Paper;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -29,6 +31,7 @@ public class SignInActivity extends AppCompatActivity {
     Button btnSignIn ;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference tab_user;
+    CheckBox cb ;
 
 
     @Override
@@ -55,21 +58,25 @@ public class SignInActivity extends AppCompatActivity {
         edtPhone = (MaterialEditText) findViewById(R.id.edtPhonenumber_SignIp);
         edtPass = (MaterialEditText) findViewById(R.id.edtPass_SignIp);
         btnSignIn = findViewById(R.id.btnSignIn_SignIp);
+
+        //init Checkbox
+        cb= findViewById(R.id.cbRemember);
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phone = edtPhone.getText().toString().trim();
-                String pass = edtPass.getText().toString().trim();
                 signInUser();
+                finish();
             }
         });
     }
 
     private void signInUser() {
+        if (cb.isChecked()){
+            Paper.book().write(Common.USER_KEY, edtPhone.getText().toString());
+            Paper.book().write(Common.PMW_KEY, edtPass.getText().toString());
+        }
         final AlertDialog dialog = new SpotsDialog(SignInActivity.this);
         dialog.show();
-//        final String localPhone = phone ;
-//        final String localPass = pass ;
         tab_user.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -104,7 +111,5 @@ public class SignInActivity extends AppCompatActivity {
         }) ;
     }
 
-    private void initView() {
 
-    }
 }
