@@ -71,45 +71,53 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void signInUser() {
-        if (cb.isChecked()){
-            Paper.book().write(Common.USER_KEY, edtPhone.getText().toString());
-            Paper.book().write(Common.PMW_KEY, edtPass.getText().toString());
-        }
-        final AlertDialog dialog = new SpotsDialog(SignInActivity.this);
-        dialog.show();
-        tab_user.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.child(edtPhone.getText().toString()).exists()){
-                    dialog.dismiss();
-                    User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
-                    user.setPhone(edtPhone.getText().toString());
-                    if (Boolean.parseBoolean(user.getIsStaff())){
-//                        System.out.print(user.getPass().equals(pass));
-                        if (user.getPassword().equals(edtPass.getText().toString().trim())) // Các thuộc tính trong class và trên Firebase phải giống nhau
-                        {
-                            Common.curentUser = user;
-                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-//                            Toast.makeText(SignInActivity.this, "Complete !", Toast.LENGTH_SHORT).show();
-                        }
-                        else
-                            Toast.makeText(SignInActivity.this, "Wrong Password !", Toast.LENGTH_SHORT).show();
-                    }
-                    else
-                        Toast.makeText(SignInActivity.this, "Pleas login with STAFF account !", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    dialog.dismiss();
-                    Toast.makeText(SignInActivity.this, "User not exist !", Toast.LENGTH_SHORT).show();
-                }
+//        final AlertDialog dialog = new SpotsDialog(SignInActivity.this);
+        if (Common.isConnectedInternet(getBaseContext())) {
+            if (cb.isChecked()) {
+                Paper.book().write(Common.USER_KEY, edtPhone.getText().toString());
+                Paper.book().write(Common.PMW_KEY, edtPass.getText().toString());
             }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.d("AAA", databaseError.toString());
-            }
-        }) ;
-    }
+//            dialog.show();
+            tab_user.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.child(edtPhone.getText().toString()).exists()){
+//                        dialog.dismiss();
+                        User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
+                        user.setPhone(edtPhone.getText().toString());
+                        if (Boolean.parseBoolean(user.getIsStaff())){
+//                        System.out.print(user.getPass().equals(pass));
+                            if (user.getPassword().equals(edtPass.getText().toString().trim())) // Các thuộc tính trong class và trên Firebase phải giống nhau
+                            {
+                                Common.curentUser = user;
+                                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+//                            Toast.makeText(SignInActivity.this, "Complete !", Toast.LENGTH_SHORT).show();
+                            }
+                            else
+                                Toast.makeText(SignInActivity.this, "Wrong Password !", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                            Toast.makeText(SignInActivity.this, "Pleas login with STAFF account !", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+//                        dialog.dismiss();
+                        Toast.makeText(SignInActivity.this, "User not exist !", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    Log.d("AAA", databaseError.toString());
+                }
+            }) ;
+        }else {
+            Toast.makeText(this, "Vui long kiem tra internet", Toast.LENGTH_SHORT).show();
+        }
+
+        }
+
+
 
 
 }

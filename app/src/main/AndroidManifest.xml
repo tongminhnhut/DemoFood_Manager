@@ -28,6 +28,11 @@
         <activity android:name=".OrderStatusActivity" />
         <activity android:name=".DetailOrderActivity" />
 
+
+
+        <activity android:name=".BannerActivity" />
+        <activity android:name=".SignUpActivity"></activity>
+
         <service android:name=".Service.MyFirebaseIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
@@ -38,9 +43,6 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-        <activity android:name=".BannerActivity" />
-        <activity android:name=".SignUpActivity"></activity>
     </application>
 
 </manifest>
