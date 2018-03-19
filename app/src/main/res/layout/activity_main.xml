@@ -29,11 +29,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <info.hoang8f.widget.FButton
+            app:fButtonColor="@color/btnSignUp"
+            android:textColor="@android:color/black"
+            android:text="Sign Up"
+            android:id="@+id/btnSignUp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:shadowColor="@android:color/black"
+            app:shadowEnabled="true"
+            app:shadowHeight="5dp"
+            android:layout_margin="8dp"
+            app:cornerRadius="4dp"/>
+        <info.hoang8f.widget.FButton
             app:fButtonColor="@color/btnSignIn"
             android:textColor="@android:color/black"
             android:text="Sign In"
             android:id="@+id/btnSignIn"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:shadowColor="@android:color/black"

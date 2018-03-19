@@ -19,6 +19,9 @@ android {
 }
 
 dependencies {
+    // library Font
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+
     // Firebase
     implementation 'com.google.firebase:firebase-messaging:11.6.2'
     implementation 'com.google.firebase:firebase-database:11.6.2'
@@ -48,6 +51,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
+
 
 
 apply plugin: 'com.google.gms.google-services'

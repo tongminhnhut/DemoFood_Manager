@@ -1,6 +1,7 @@
 package com.tongminhnhut.orderfood_manager;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -45,6 +46,8 @@ import java.util.Map;
 import java.util.UUID;
 
 import info.hoang8f.widget.FButton;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class BannerActivity extends AppCompatActivity {
     RecyclerView recyclerView ;
@@ -66,8 +69,22 @@ public class BannerActivity extends AppCompatActivity {
     private final int PICK_IMAGE_REQUEST = 13;
 
     @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        //set Default font
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fs.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build()
+        );
+
         setContentView(R.layout.activity_banner);
         mData = FirebaseDatabase.getInstance();
         foodsList = mData.getReference("Banner");

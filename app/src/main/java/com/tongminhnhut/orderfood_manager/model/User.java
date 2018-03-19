@@ -10,6 +10,7 @@ public class User {
     public User(String name, String password) {
         Name = name;
         Password = password;
+        IsStaff = "true" ;
     }
 
 

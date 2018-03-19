@@ -1,5 +1,6 @@
 package com.tongminhnhut.orderfood_manager;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -36,6 +37,8 @@ import com.tongminhnhut.orderfood_manager.model.Token;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class OrderStatusActivity extends AppCompatActivity {
 
@@ -50,8 +53,23 @@ public class OrderStatusActivity extends AppCompatActivity {
     APIService mService ;
 
     @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //set Default font
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fs.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build()
+        );
+
+
         setContentView(R.layout.activity_order_status);
         mData = FirebaseDatabase.getInstance();
         tab_request = mData.getReference("Requests");

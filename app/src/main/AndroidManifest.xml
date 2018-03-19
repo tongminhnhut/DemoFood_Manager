@@ -39,7 +39,8 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".BannerActivity"></activity>
+        <activity android:name=".BannerActivity" />
+        <activity android:name=".SignUpActivity"></activity>
     </application>
 
 </manifest>
