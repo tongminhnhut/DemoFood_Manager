@@ -71,19 +71,19 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void signInUser() {
-//        final AlertDialog dialog = new SpotsDialog(SignInActivity.this);
+        final AlertDialog dialog = new SpotsDialog(SignInActivity.this);
         if (Common.isConnectedInternet(getBaseContext())) {
             if (cb.isChecked()) {
                 Paper.book().write(Common.USER_KEY, edtPhone.getText().toString());
                 Paper.book().write(Common.PMW_KEY, edtPass.getText().toString());
             }
 
-//            dialog.show();
+            dialog.show();
             tab_user.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     if (dataSnapshot.child(edtPhone.getText().toString()).exists()){
-//                        dialog.dismiss();
+                        dialog.dismiss();
                         User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
                         user.setPhone(edtPhone.getText().toString());
                         if (Boolean.parseBoolean(user.getIsStaff())){
@@ -101,7 +101,7 @@ public class SignInActivity extends AppCompatActivity {
                             Toast.makeText(SignInActivity.this, "Pleas login with STAFF account !", Toast.LENGTH_SHORT).show();
                     }
                     else {
-//                        dialog.dismiss();
+                        dialog.dismiss();
                         Toast.makeText(SignInActivity.this, "User not exist !", Toast.LENGTH_SHORT).show();
                     }
                 }

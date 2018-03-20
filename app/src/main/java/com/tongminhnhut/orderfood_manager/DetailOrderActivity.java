@@ -66,7 +66,7 @@ public class DetailOrderActivity extends AppCompatActivity {
         txtTotal.setText(Common.currentRequest.getTotal());
         txtComment.setText(Common.currentRequest.getNote());
 
-        OrderDetailAdapter adapter = new OrderDetailAdapter(Common.currentRequest.getFoods());
+        OrderDetailAdapter adapter = new OrderDetailAdapter(Common.currentRequest.getFoods(), getApplicationContext());
         adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
 

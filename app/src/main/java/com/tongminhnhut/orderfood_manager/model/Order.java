@@ -10,16 +10,26 @@ public class Order {
     private String Quanlity ;
     private String Price ;
     private String Discount ;
+    private String Image ;
 
     public Order() {
     }
 
-    public Order(String productID, String productName, String quanlity, String price, String discount) {
+    public Order(String productID, String productName, String quanlity, String price, String discount, String image ) {
         ProductID = productID;
         ProductName = productName;
         Quanlity = quanlity;
         Price = price;
         Discount = discount;
+        Image = image ;
+    }
+
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
     }
 
     public String getProductID() {

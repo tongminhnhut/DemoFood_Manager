@@ -16,7 +16,7 @@ import com.tongminhnhut.orderfood_manager.R;
 
 public class OrderViewHolder extends RecyclerView.ViewHolder
 {
-    public TextView txtTen, txtStatus, txtPhone, txtAddress ;
+    public TextView txtTen, txtStatus, txtPhone, txtTime ;
     public Button btnEdit, btnRemove, btnDetail ;
 
     public OrderViewHolder(View itemView) {
@@ -24,7 +24,7 @@ public class OrderViewHolder extends RecyclerView.ViewHolder
         txtTen = (TextView) itemView.findViewById(R.id.txtName_OrderItem);
         txtStatus = (TextView) itemView.findViewById(R.id.txtStatus_OrderItem);
         txtPhone= (TextView) itemView.findViewById(R.id.txtPhone_OrderItem);
-        txtAddress = (TextView) itemView.findViewById(R.id.txtAddress_OrderItem);
+        txtTime = (TextView) itemView.findViewById(R.id.txtTime_OrderItem);
 
         btnDetail = itemView.findViewById(R.id.btnDetail_OrderItem);
         btnEdit = itemView.findViewById(R.id.btnEdit_OrderItem);

@@ -97,7 +97,7 @@ public class OrderStatusActivity extends AppCompatActivity {
                 viewHolder.txtTen.setText("Bàn số " +model.getAddress());
                 viewHolder.txtStatus.setText(Common.convertCodeStatus(""+model.getStatus()));
                 viewHolder.txtPhone.setText(model.getPhone()+"");
-                viewHolder.txtAddress.setText(model.getAddress());
+                viewHolder.txtTime.setText(model.getTime()+"");
 
                 viewHolder.btnEdit.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -173,7 +173,7 @@ public class OrderStatusActivity extends AppCompatActivity {
         View view = inflater.inflate(R.layout.update_order_layout, null);
 
         spinner = view.findViewById(R.id.spinnerStatus);
-        spinner.setItems("Đang làm", "Hoàn thành", "Giao tận bàn");
+        spinner.setItems("Đang làm","Hoàn thành");
 
         alertDialog.setView(view);
 
