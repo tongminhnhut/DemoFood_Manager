@@ -83,11 +83,9 @@ public class SignInActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     if (dataSnapshot.child(edtPhone.getText().toString()).exists()){
-                        dialog.dismiss();
                         User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
                         user.setPhone(edtPhone.getText().toString());
                         if (Boolean.parseBoolean(user.getIsStaff())){
-//                        System.out.print(user.getPass().equals(pass));
                             if (user.getPassword().equals(edtPass.getText().toString().trim())) // Các thuộc tính trong class và trên Firebase phải giống nhau
                             {
                                 Common.curentUser = user;
