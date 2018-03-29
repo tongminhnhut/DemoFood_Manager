@@ -28,7 +28,13 @@ public class Common {
         if (code.equals("1"))
             return "Hoàn thành" ;
         else
-            return "Giao tận bàn" ;
+            return "Thanh toán" ;
+    }
+
+    public static String convertCodeCash (String code){
+        if (code.equals("0")){
+            return "" ;
+        } else return "Thanh toán";
     }
 
     private static final String BASE_URL = "https://fcm.googleapis.com/";

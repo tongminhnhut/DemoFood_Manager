@@ -81,6 +81,7 @@ public class TableActivity extends AppCompatActivity {
                 viewHolder.txtStatus.setText(Common.convertCodeStatus(model.getStatus()+""));
                 viewHolder.txtNgay.setText(model.getNgay()+"");
                 viewHolder.txtGio.setText(model.getGio()+"");
+                viewHolder.txtCash_Status.setText(Common.convertCodeCash(model.getCash_Status()));
 
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override

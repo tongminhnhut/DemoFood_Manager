@@ -48,6 +48,7 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 import com.squareup.picasso.Picasso;
 import com.tongminhnhut.orderfood_manager.Common.Common;
 import com.tongminhnhut.orderfood_manager.Interface.ItemClickListener;
+import com.tongminhnhut.orderfood_manager.Service.ListenCashService;
 import com.tongminhnhut.orderfood_manager.ViewHolder.MenuViewHolder;
 import com.tongminhnhut.orderfood_manager.model.Category;
 import com.tongminhnhut.orderfood_manager.model.Token;
@@ -140,8 +141,8 @@ public class HomeActivity extends AppCompatActivity
         recyclerView.setLayoutManager(layoutManager);
 
         loadMenu();
-//        Intent intent = new Intent(getApplicationContext(), ListenServer.class);
-//        startService(intent);
+        Intent intent = new Intent(getApplicationContext(), ListenCashService.class);
+        startService(intent);
 
         // send Token
         updateToken(FirebaseInstanceId.getInstance().getToken());

@@ -38,7 +38,12 @@
 
         <activity android:name=".TableActivity" />
         <activity android:name=".CashActivity" />
-        <activity android:name=".CashDetailActivity"></activity>
+        <activity android:name=".CashDetailActivity" />
+
+        <service
+            android:name=".Service.ListenCashService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

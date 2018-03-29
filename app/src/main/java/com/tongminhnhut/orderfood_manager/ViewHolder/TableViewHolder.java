@@ -16,7 +16,7 @@ import com.tongminhnhut.orderfood_manager.R;
 public class TableViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
         View.OnCreateContextMenuListener
 {
-    public TextView txtBan, txtStatus, txtNgay, txtGio ;
+    public TextView txtBan, txtStatus, txtNgay, txtGio, txtCash_Status ;
 
     private ItemClickListener itemClickListener ;
 
@@ -27,6 +27,7 @@ public class TableViewHolder extends RecyclerView.ViewHolder implements View.OnC
         txtStatus = itemView.findViewById(R.id.txtStatus_TableItem);
         txtNgay = itemView.findViewById(R.id.txtDate_TableItem);
         txtGio = itemView.findViewById(R.id.txtTime_TableItem);
+        txtCash_Status = itemView.findViewById(R.id.txtThanhToan_TableItem);
 
         itemView.setOnClickListener(this);
         itemView.setOnCreateContextMenuListener(this);
