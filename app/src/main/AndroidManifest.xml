@@ -27,18 +27,18 @@
         <activity android:name=".FoodListActivity" />
         <activity android:name=".OrderStatusActivity" />
         <activity android:name=".DetailOrderActivity" />
-
-
-
         <activity android:name=".BannerActivity" />
-        <activity android:name=".SignUpActivity"></activity>
-
+        <activity android:name=".SignUpActivity" />
 
         <service android:name=".Service.MyFirebaseMessing">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <activity android:name=".TableActivity" />
+        <activity android:name=".CashActivity" />
+        <activity android:name=".CashDetailActivity"></activity>
     </application>
 
 </manifest>

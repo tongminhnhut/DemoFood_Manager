@@ -10,25 +10,20 @@
             android:iconTint="@android:color/white"
             android:title="Banner" />
         <item
-            android:id="@+id/nav_menu"
-            android:icon="@drawable/ic_restaurant_black_24dp"
+            android:id="@+id/nav_cash"
+            android:icon="@drawable/ic_attach_money_black_24dp"
             android:iconTint="@android:color/white"
-            android:title="Menu" />
-        <item
-            android:id="@+id/nav_cart"
-            android:icon="@drawable/ic_shopping_cart_black_24dp"
-            android:iconTint="@android:color/white"
-            android:title="Cart" />
+            android:title="Thu Ngân" />
         <item
             android:id="@+id/nav_order"
             android:icon="@drawable/ic_access_time_black_24dp"
             android:iconTint="@android:color/white"
-            android:title="Order Status" />
+            android:title="Bếp" />
         <item
             android:id="@+id/nav_Logout"
             android:icon="@drawable/ic_exit_to_app_black_24dp"
             android:iconTint="@android:color/white"
-            android:title="Log out" />
+            android:title="Đăng xuất" />
 
     </group>
 

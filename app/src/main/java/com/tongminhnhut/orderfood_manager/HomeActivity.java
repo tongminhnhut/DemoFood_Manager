@@ -339,16 +339,9 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.nav_cart){
-
-        }
-        else if (id == R.id.nav_Logout){
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-        }
-        else if (id == R.id.nav_menu){
-            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-
-        }
+       if (id == R.id.nav_Logout) {
+           startActivity(new Intent(getApplicationContext(), MainActivity.class));
+       }
         else if (id == R.id.nav_order){
             startActivity(new Intent(getApplicationContext(), OrderStatusActivity.class));
 
@@ -364,24 +357,20 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_cart){
-
-        }
-        else if (id == R.id.nav_Logout){
+        if (id == R.id.nav_Logout){
             Paper.book().destroy();
             Intent logoutItent = new Intent(getApplicationContext(), SignInActivity.class);
             logoutItent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(logoutItent);
-        }
-        else if (id == R.id.nav_menu){
-            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-
         }
         else if (id == R.id.nav_order){
             startActivity(new Intent(getApplicationContext(), OrderStatusActivity.class));
 
         }else if (id == R.id.nav_banner){
             startActivity(new Intent(getApplicationContext(), BannerActivity.class));
+
+        }else if (id == R.id.nav_cash){
+            startActivity(new Intent(getApplicationContext(), TableActivity.class));
 
         }
 

@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     Button  btnSignIn, btnSignUp;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference tab_user;
+    TextView txtManager ;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -50,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
         initView();
         firebaseDatabase = FirebaseDatabase.getInstance();
         tab_user = firebaseDatabase.getReference("User");
+        txtManager = findViewById(R.id.txtManager);
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fs.ttf");
+        txtManager.setTypeface(typeface);
 
         //init Paper
         Paper.init(this);
@@ -61,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         addEvents();
+
+
     }
 
     private void login(final String phone, final String pwd) {

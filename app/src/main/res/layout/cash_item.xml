@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="4dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtBan_CachItem"
+                    android:text="Ban so 1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textStyle="italic"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical|start"
+                    android:id="@+id/txtphone_CashItem"
+                    android:text="0124424141"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textStyle="italic"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical|start"
+                    android:id="@+id/txtStatus_CashItem"
+                    android:text="status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold|italic"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical|start"
+                    android:id="@+id/txtPrice_CashItem"
+                    android:text="Price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textStyle="italic"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical|start"
+                    android:id="@+id/txtDate_CashItem"
+                    android:text="Date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="4"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <info.hoang8f.widget.FButton
+                app:shadowEnabled="true"
+                app:shadowHeight="4dp"
+                android:layout_weight="4"
+                android:shadowColor="@color/colorPrimary"
+                app:fButtonColor="@android:color/white"
+                android:text="Chi tiết"
+                android:id="@+id/btnDetail_CashItem"
+                app:cornerRadius="0dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <info.hoang8f.widget.FButton
+                app:shadowEnabled="true"
+                app:shadowHeight="4dp"
+                android:layout_weight="4"
+                android:shadowColor="@color/colorPrimary"
+                app:fButtonColor="@android:color/white"
+                android:text="Xóa"
+                android:id="@+id/btnXoa_CashItem"
+                app:cornerRadius="0dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

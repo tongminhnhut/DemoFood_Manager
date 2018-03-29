@@ -93,7 +93,7 @@ public class OrderStatusActivity extends AppCompatActivity {
 
         adapter = new FirebaseRecyclerAdapter<Requests, OrderViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull OrderViewHolder viewHolder, final int position, @NonNull final Requests model) {
+            protected void onBindViewHolder(@NonNull final OrderViewHolder viewHolder, final int position, @NonNull final Requests model) {
                 viewHolder.txtTen.setText("Bàn số " +model.getAddress());
                 viewHolder.txtStatus.setText(Common.convertCodeStatus(""+model.getStatus()));
                 viewHolder.txtPhone.setText(model.getPhone()+"");
@@ -102,7 +102,15 @@ public class OrderStatusActivity extends AppCompatActivity {
                 viewHolder.btnEdit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        showUpDateDialog(adapter.getRef(position).getKey(), adapter.getItem(position));
+                        viewHolder.btnEdit.setText("Complete");
+                        adapter.getItem(position).setStatus("1");
+                        adapter.notifyDataSetChanged(); // Them vao để cập nhật item size
+
+                        tab_request.child(adapter.getRef(position).getKey()).setValue(adapter.getItem(position));
+
+                        sendOrderStatusToUser(adapter.getRef(position).getKey(),adapter.getItem(position));
+
+//                        showUpDateDialog(adapter.getRef(position).getKey(), adapter.getItem(position));
 
                     }
                 });
@@ -164,6 +172,7 @@ public class OrderStatusActivity extends AppCompatActivity {
     }
 
     private void showUpDateDialog(final String key, final Requests item) {
+
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         alertDialog.setTitle("Update Order");
         alertDialog.setMessage("Please choose status");
@@ -173,7 +182,7 @@ public class OrderStatusActivity extends AppCompatActivity {
         View view = inflater.inflate(R.layout.update_order_layout, null);
 
         spinner = view.findViewById(R.id.spinnerStatus);
-        spinner.setItems("Đang làm","Hoàn thành");
+//        spinner.setItems("Đang làm","Hoàn thành");
 
         alertDialog.setView(view);
 
@@ -182,7 +191,8 @@ public class OrderStatusActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
 
-                item.setStatus(String.valueOf(spinner.getSelectedIndex()));
+//                item.setStatus(String.valueOf(spinner.getSelectedIndex()));
+                item.setStatus("Complete");
                 adapter.notifyDataSetChanged(); // Them vao để cập nhật item size
 
                 tab_request.child(key).setValue(item);

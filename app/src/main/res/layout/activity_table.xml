@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgorder"
-    tools:context="com.tongminhnhut.orderfood_manager.OrderStatusActivity">
-
+    tools:context="com.tongminhnhut.orderfood_manager.TableActivity">
     <android.support.v7.widget.RecyclerView
-        android:background="@android:color/transparent"
-        android:id="@+id/recylerOrderStatus"
+        android:id="@+id/recylerTab"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
 </RelativeLayout>

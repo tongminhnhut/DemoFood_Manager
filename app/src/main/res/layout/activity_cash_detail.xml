@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgorder"
-    tools:context="com.tongminhnhut.orderfood_manager.DetailOrderActivity">
+    tools:context="com.tongminhnhut.orderfood_manager.CashDetailActivity">
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView_OrderDetail"
@@ -30,37 +29,39 @@
                     android:textStyle="bold"
                     android:layout_marginLeft="10dp"
                     android:gravity="center_vertical|start"
-                    android:id="@+id/txtID_OrderDetail"
-                    android:text="#123456"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-
-                <TextView
-                    android:textStyle="italic"
-                    android:layout_marginLeft="10dp"
-                    android:gravity="center_vertical|start"
-                    android:id="@+id/txtPhone_OrderDetail"
-                    android:text="01654580403"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:textStyle="italic"
-                    android:layout_marginLeft="10dp"
-                    android:gravity="center_vertical|start"
-                    android:id="@+id/txtTotal_OrderDetail"
-                    android:text="$1000"
+                    android:id="@+id/txtBan_CashDetail"
+                    android:text="Ban so 1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
-                    android:textStyle="italic"
                     android:layout_marginLeft="10dp"
                     android:gravity="center_vertical|start"
-                    android:id="@+id/txtComment_OrderDetail"
-                    android:text="Comment"
+                    android:id="@+id/txtStatus_CashDetail"
+                    android:text="Status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="italic"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical|start"
+                        android:id="@+id/txtTotal_CashDetail"
+                        android:text="Total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textColor="@color/colorAccent"
+                        android:layout_marginLeft="3dp"
+                        android:text="VNĐ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
 
 
             </LinearLayout>
@@ -75,6 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:textStyle="bold"
             android:layout_marginLeft="8dp"
             android:layout_marginBottom="20dp"
             android:textColor="@android:color/black"
@@ -83,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyler_OrderDetail"
+            android:id="@+id/recyler_CashDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

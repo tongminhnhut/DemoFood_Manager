@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/my_bg"
+    android:background="@drawable/bgordersignin"
     tools:context="com.tongminhnhut.orderfood_manager.SignUpActivity">
 
     <LinearLayout
@@ -16,36 +16,36 @@
         android:layout_height="wrap_content">
         <com.rengwuxian.materialedittext.MaterialEditText
             android:inputType="number"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"
             android:paddingLeft="10dp"
             android:id="@+id/edtPhoneNumber_SignUp"
             android:text="01654580403"
             android:hint="Phone number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:met_baseColor="@android:color/white"
+            app:met_baseColor="@android:color/black"
             app:met_floatingLabel="highlight"
             app:met_maxCharacters="11"
-            app:met_primaryColor="@android:color/white"
+            app:met_primaryColor="@android:color/black"
             app:met_singleLineEllipsis="true"/>
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"
             android:paddingLeft="10dp"
             android:id="@+id/edtFullName_SignUp"
             android:text="Tống Minh Nhựt"
             android:hint="Full name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:met_baseColor="@android:color/white"
+            app:met_baseColor="@android:color/black"
             app:met_floatingLabel="highlight"
             app:met_maxCharacters="20"
             app:met_singleLineEllipsis="true"
-            app:met_primaryColor="@android:color/white"
+            app:met_primaryColor="@android:color/black"
             />
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:textColorHint="@android:color/white"
+            android:textColorHint="@android:color/black"
             android:inputType="textPassword"
             android:paddingLeft="10dp"
             android:id="@+id/edtPass_SignUp"
@@ -53,10 +53,10 @@
             android:text="123"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:met_baseColor="@android:color/white"
+            app:met_baseColor="@android:color/black"
             app:met_floatingLabel="highlight"
             app:met_maxCharacters="11"
-            app:met_primaryColor="@android:color/white"
+            app:met_primaryColor="@android:color/black"
             app:met_singleLineEllipsis="true"/>
 
     </LinearLayout>
@@ -66,7 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <info.hoang8f.widget.FButton
-            app:fButtonColor="@color/btnSignUp"
+            app:fButtonColor="@color/btnMainUp"
             android:textColor="@android:color/white"
             android:textAllCaps="false"
             android:text="Sign Up"

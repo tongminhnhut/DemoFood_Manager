@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/my_bg"
+    android:background="@drawable/bgorder"
     android:id="@+id/relativelayoutFood"
     tools:context="com.tongminhnhut.orderfood_manager.BannerActivity">
 
